@@ -126,9 +126,57 @@
 
           </div>
 
-          <figure class="hero-banner has-before img-holder" style="--width: 650; --height: 650;">
-            <img src="./assets/images/hero-banner.png" width="650" height="650" alt="hero banner" class="img-cover">
+          <figure class="hero-banner has-before video-holder" style="--width: 650; --height: 650;  position: relative;">
+            <video id="heroVideo" width="450" height="450" class="video-cover">
+              <source src="." type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            
+            <!-- Bouton Play -->
+            <button id="playButton" class="play-btn">▶</button>
           </figure>
+          
+          <style>
+            .video-holder {
+              display: flex;
+              justify-content: center;
+              background: rgb(155, 152, 152);
+              align-items: center;
+            }
+            
+            .play-btn {
+              position: absolute;
+              background: rgba(255, 255, 255, 0.8);
+              border: none;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              font-size: 24px;
+              font-weight: bold;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          
+            .play-btn:hover {
+              background: rgba(255, 255, 255, 1);
+            }
+          </style>
+          
+          <script>
+            const video = document.getElementById("heroVideo");
+            const playButton = document.getElementById("playButton");
+          
+            playButton.addEventListener("click", () => {
+              if (video.paused) {
+                video.play();
+                playButton.style.display = "none"; // Masquer le bouton après lecture
+              }
+            });
+          </script>
+          
+          
 
         </div>
       </section>

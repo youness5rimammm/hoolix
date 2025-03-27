@@ -429,8 +429,8 @@ body {
   font-weight: var(--fw-600);
 }
 
-.hero-banner,
-.hero-banner > img { border-radius: 50%; }
+/* .hero-banner,
+.hero-banner > img { border-radius: 50%; } */
 
 .hero-banner::before {
   top: 50%;
