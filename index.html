@@ -109,7 +109,7 @@
       <section class="section hero" id="home" aria-label="hero">
         <div class="container">
 
-          <div class="hero-content">
+          <div class="hero-content" "> 
  
             <p class="hero-subtitle" style="font-size: 2rem;">Unlock the Ultimate Video Marketing Powerhouse!</p>
 
@@ -124,43 +124,84 @@
               
             </div>
 
-          </div>
+          </div> 
 
-          <figure class="hero-banner has-before video-holder" style="--width: 650; --height: 650;  position: relative;">
-            <video id="heroVideo" width="450" height="450" class="video-cover">
-              <source src="." type="video/mp4">
+          <figure class="hero-banner  video-holder">
+            <video id="heroVideo" width="650" height="650" class="video-cover">
+              <source src="./assets/videos/hero-banner.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            
+          
             <!-- Bouton Play -->
             <button id="playButton" class="play-btn">▶</button>
           </figure>
-          
           <style>
+            /* Conteneur vidéo responsive */
             .video-holder {
+              position: relative;
+              width: 550px; /* Ajustable */
+              height: 450px;
+              max-width: 1200px; /* Taille max pour les grands écrans */
+              aspect-ratio: 16 / 9; /* Assure un bon format */
+              background-color: black;
               display: flex;
               justify-content: center;
-              background: rgb(155, 152, 152);
               align-items: center;
+              overflow: hidden;
+              border-radius: 10px; /* Coins arrondis */
+              margin: auto; /* Centre la vidéo */
             }
-            
+          
+            /* Ajuste la vidéo pour bien remplir le conteneur */
+            .video-cover {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          
+            /* Style du bouton Play */
             .play-btn {
               position: absolute;
               background: rgba(255, 255, 255, 0.8);
               border: none;
-              width: 60px;
-              height: 60px;
+              width: 80px;
+              height: 80px;
               border-radius: 50%;
-              font-size: 24px;
+              font-size: 30px;
               font-weight: bold;
               cursor: pointer;
               display: flex;
               justify-content: center;
               align-items: center;
+              transition: transform 0.2s ease;
             }
           
             .play-btn:hover {
               background: rgba(255, 255, 255, 1);
+              transform: scale(1.1);
+            }
+          
+            /* 📱 Responsive - Mobile */
+            @media (max-width: 768px) {
+              .video-holder {
+                width: 95%;
+                max-width: 100%;
+              }
+          
+              .play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+              }
+            }
+          
+            /* 📱 Responsive - Très petits écrans */
+            @media (max-width: 480px) {
+              .play-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+              }
             }
           </style>
           
@@ -175,7 +216,6 @@
               }
             });
           </script>
-          
           
 
         </div>
